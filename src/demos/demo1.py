@@ -81,7 +81,7 @@ class BinaryTreeNode:
 b1 = BinaryTreeNode(5)
 b1.left = BinaryTreeNode(12)
 b1.right = BinaryTreeNode(32)
-b1.right.left = BinaryTreeNode(8)
+b1.right.left = BinaryTreeNode(9)
 b1.right.right = BinaryTreeNode(4)
 print(b1.maxDepth(b1))
 
