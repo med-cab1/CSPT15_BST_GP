@@ -39,7 +39,48 @@ return False.
 #     self.value = x
 #     self.left = None
 #     self.right = None
+
+#Function to find height of a binary tree
+def height(root):
+    #If tree is empty
+    if root is None:
+        return 0
+    #comparing the heights of the left and right sub-trees
+    #to decide the height of the tree
+    #maximum value is returned
+    return max(height(root.left), height(root.right)) + 1
+#function to check tree is balanced or not
+
+
+
 def balancedBinaryTree(root):
-
-
-
+     #if tree is empty
+    if root is None:
+        return True
+    #finding the height of the left and right sub-tree
+    lh = height(root.left)
+    rh = height(root.right)
+#The values of (lh - rh)  can be 1, -1, 0
+    if (abs(lh - rh) <= 1) and balancedBinaryTree(
+        root.left) is True and balancedBinaryTree(root.right) is True:
+        return True
+    
+    return False
+# def main():
+#     #object for Node class
+#     root = (15)
+#     root.left = (10)
+#     root.right = (32)
+#     root.left.left = (4)
+#     root.left.right = (9)
+#     root.left.left.left = (46)
+#     root.left.left.right = (52)
+#     if balancedBinaryTree(root):
+#         print("Tree is balanced")
+#     else:
+#         print("Tree is not balanced")
+# #Driver code
+# if __name__ == "__main__":
+#     main()
+# Output:
+#     Tree is not balanced
